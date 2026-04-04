@@ -1,0 +1,7 @@
+{
+  "name": "Eduvan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
