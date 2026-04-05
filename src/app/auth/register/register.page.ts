@@ -35,6 +35,19 @@ export class RegisterPage implements OnInit {
         this.email = event.detail.value;
         this.validateEmail();
     }
+    // Fungsi login (sebelum pindah halaman)
+    register() {
+        this.validateEmail(); // Validasi sebelum login
+        
+        if (this.isEmailInvalid || !this.email) {
+            alert('Masukkan email yang valid!');
+            return;
+        }
+        console.log('Email valid, lanjut login:', this.email);
+        
+        // Setelah valid, panggil goLogin untuk pindah halaman
+        this.goRegister();
+    }
 
   goRegister() {
     this.router.navigate(['/login']);
