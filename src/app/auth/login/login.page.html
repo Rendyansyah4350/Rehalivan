@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Login </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+      <ion-img alt="rehalivan" src="../../../assets/icon/learning.png" />
+      <ion-card-header>
+        <ion-card-title>Login</ion-card-title>
+        <ion-card-subtitle>login untuk melanjutkan Belajar</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-input
+              label="Email"
+              type="email"
+              labelPlacement="floating"
+              placeholder="Enter Email"
+              [(ngModel)]="email"
+              (ionInput)="validateEmail()"
+              ;
+            ></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isEmailInvalid">
+            <small>Format email tidak valid! Contoh: Example@gmail.com</small>
+          </ion-text>
+
+          <ion-item>
+            <ion-input
+              label="Password"
+              type="Password"
+              labelPlacement="floating"
+              placeholder="Enter Password"
+              ><ion-input-password-toggle slot="end"></ion-input-password-toggle
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button (click)="goLogin()" expand="block">Login</ion-button>
+        <div class="register-link" style="text-align: center; margin-top: 16px">
+          <span>Dont have Account? </span>
+          <ion-button fill="clear" size="small" (click)="goToRegister()"
+            >Register</ion-button
+          >
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
